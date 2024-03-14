@@ -1,4 +1,7 @@
 szamokGombok();
+const esemnygombok=esemenyGombok();
+gombesemeny();
+const muvjel=muveletjelek();
 
 function szamokGombok(){
     const szamgomg= document.getElementsByClassName("szamok")[0];
@@ -13,13 +16,26 @@ function szamokGombok(){
     console.log(txt);
 }
 
-function esemenyGombok(){
-    const EsemynGombok=document.querySelectorAll(".szamok button ");
-    console.log(esemenyGombok)
-    for (let index = 0; index < esemenyGombok.length; index++) {
-        esemenyGom
-        
-    }
+function esemenyGombok() {
+    const EsemenyGombok = document.querySelectorAll(".szamok button");
+    EsemenyGombok.forEach(button => {
+        button.addEventListener("click", gombesemeny);
+    });
+    return EsemenyGombok;
 }
 
-function
+function gombesemeny(event) {
+    const kijelzo = document.querySelector(".kijelzo");
+    kijelzo.innerHTML = event.target.innerHTML;
+}
+
+function muveletjelek(){
+    const muveletJel=querySelector("#osszeadas");
+    muveletJel.addEventListener("click", osszeadas())
+    return muveletJel;
+}
+
+function osszeadas(){
+    const kijelzo = document.querySelector(".kijelzo");
+    kijelzo.innerHTML = event.target.innerHTML;
+}
